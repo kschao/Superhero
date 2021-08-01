@@ -12,13 +12,9 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Movie',
+            name='Superhero',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('genre', models.CharField(max_length=50)),
-                ('runtime', models.IntegerField()),
-                ('release_date', models.DateField()),
             ],
         ),
     ]
