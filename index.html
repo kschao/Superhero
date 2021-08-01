@@ -23,12 +23,22 @@
         <a href="new" class="btn btn-success">Create a new superhero</a>
       </div>
     </div><br>
-
-    <h1> This is a templated view!</h1>
-    <ul>
-        {% for movie in all_movies %}
-        <li><h2> {{movie.name}} oooo, so scary! </h2></li>
+    <div class="row justify-content-center">
+        {% for SuperHero in all_superheroes %}
+            <div class="col-sm-3 col-md-3 g-4">
+        <div class="card" style="">
+      <img src="file:///Users/dustin.koy/Desktop/projects/images/139-1394130_thor-superhero-thor-marvel-marvel-now-marvel-comics.png" class="card-img-top" alt="{{SuperHero.superhero_name}}" style="width:175px;height:175px;">>
+      <div class="card-body">
+          <h2>{{SuperHero.superhero_name}}</h2>
+        <p class="card-text">{{SuperHero.alter_ego_name}}</p>
+          <a href="{% url 'Superhero:detail' SuperHero.id %}" class="btn btn-primary">View</a>
+          <a href="{% url 'Superhero:edit' SuperHero.id %}" class="btn btn-warning">Edit</a>
+          <a href="{% url 'Superhero:delete' SuperHero.id %}" class="btn btn-danger">Delete</a>
+      </div>
+        </div></div><br>
         {% endfor %}
-    </ul>
-</body>
-</html>
+        </div>
+    <br><br>
+    </div>
+    </body>
+    </html>
